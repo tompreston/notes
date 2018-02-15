@@ -1,13 +1,11 @@
 # Raspberry Pi notes
-raspi-config
+GPIO mapping
 
-Headless ssh
+    https://pinout.xyz/
 
-    touch /boot/ssh
+Serial UART
 
-UART
-
-    echo "enable_uart=1 >> /boot/config.txt
+    echo "enable_uart=1" >> /boot/config.txt
 
     GPIO Outside row
     5V 5V [GND TX RX]<-UART
@@ -19,9 +17,20 @@ UART
     baud: 115200 8N1, flow control: N
     https://elinux.org/RPi_Serial_Connection
 
-GPIO mapping
+Configure interfaces with `raspi-config`
 
-    https://pinout.xyz/
+Static IP
+
+    # cat /etc/network/interfaces
+    iface eth0 inet static
+        address 192.168.1.118
+        gateway 192.168.1.1
+        netmask 255.255.255.0
+    # service networking restart
+
+Headless ssh
+
+    touch /boot/ssh
 
 Ping multiple rpis
 
