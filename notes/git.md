@@ -1,4 +1,8 @@
 # git
+Latest tag info
+
+    git describe
+
 Short revs
 
     git rev-parse --short HEAD
