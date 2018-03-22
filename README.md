@@ -1,5 +1,5 @@
 # Thomas Preston Notes
-An unorganised collection of notes and cheat sheets for various technologies.
+An unorganised collection of notes and cheat sheets.
 
     head -100 notes/* | less
 
