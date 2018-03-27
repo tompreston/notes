@@ -20,8 +20,11 @@ To send email from laptop use the following configs.
     dc_mailname_in_oh='true'
     dc_localdelivery='mail_spool'
 
-then edit /etc/exim4/passwd.client
-    *.domain.co.uk:USERNAME:PASSWORD
+then add password:
+```
+$ cat /etc/exim4/passwd.client
+*.domain.co.uk:USERNAME:PASSWORD
+```
 
     $ cat /etc/mailname
     ct-lt-586
