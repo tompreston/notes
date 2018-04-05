@@ -4,3 +4,5 @@
 Use `host` to search DNS for hostname:
 
     $ host HOSTNAME DNS-IP
+
+- ifup/ifdown will reassociate using dhclient
