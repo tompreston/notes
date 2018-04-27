@@ -1,4 +1,6 @@
-# Emoji Characters
-Debian:
+# Fonts
+A list of packages for Debian.
 
-    sudo apt install fonts-symbola
+    fonts-inconsolata
+    fonts-nanum
+    fonts-symbola
