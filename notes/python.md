@@ -1,12 +1,13 @@
 # Python
-- Python 3
+- Use Python 3
 - Don't Panic http://docs.python-guide.org/en/latest/
 - Always follow PEP-8, use a linter https://www.python.org/dev/peps/pep-0008/
 - pipenv is official package management, see below
 - Use a requirements.txt file to describe project dependencies
 
 ## pipenv and Debian 9 Stretch stable
-- System-wide pip3
+- Use system pip3 to install ~/.local/bin/pip3, then make sure PATH contains
+  ~/.local/bin. Use --user flag to upgrade pip.
 - Then you can use pipenv for local-per-project development
 - pip3 can still be used to install system-wide packages for "deployment"
 
