@@ -1,4 +1,7 @@
 # Network
-static IP with ifconfig
+Static IP:
 
-    ifconfig eth0 10.1.7.13 netmask 255.255.255.0 up
+    service networking stop
+    ip link set eth0 up
+    ip addr add 192.168.100.10/24 dev eth0
+    ping 192.168.100.1
