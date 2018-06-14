@@ -16,3 +16,7 @@ Short revs
 
     git send-email --cover-letter --annotate master
     git format-patch --cover-letter -o outbox master
+
+git am, "error: patch does not apply", try:
+
+    git am --reject 0000-my-feature.patch
