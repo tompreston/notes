@@ -16,3 +16,9 @@
     cd project/
     pipenv install -r requirements.txt
     pipenv lock -r
+
+## macOS High Sierra
+There appear to be stricter permissions writing to /usr/local. You may need to
+manually create /usr/local/Frameworks and /usr/local/lib.
+
+    https://stackoverflow.com/questions/47513024/how-to-fix-permissions-on-home-brew-on-macos-high-sierra
