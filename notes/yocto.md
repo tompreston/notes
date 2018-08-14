@@ -15,6 +15,14 @@ Enter a devshell before `do_compile`:
 
     bitbake $recipie-name -c devshell
 
+Force a build from the `do_unpack` stage:
+
+    bitbake $recipie-name -C unpack
+
+See which recipes built a package:
+
+    oe-pkgdata-util find-path /path/to/package
+
 # Normal recipe build tasks:
 
     do_build      Depends on all normal tasks
