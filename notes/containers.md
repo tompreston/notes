@@ -1,8 +1,6 @@
 # Containers
 It all began with chroots. Then came containers.
 
-! You cannot have users in containers, only root !
-
 # systemd-nspawn
 https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
 
