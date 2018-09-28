@@ -12,3 +12,7 @@ Set either:
 
     env TERM=gnome-256color /bin/bash
     env TERM=gnome-256color /usr/bin/tmux
+
+This fixes:
+
+    https://github.com/tmux/tmux/issues/459
