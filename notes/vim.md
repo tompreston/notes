@@ -18,6 +18,10 @@ Install some useful extensions:
     git clone https://github.com/tpope/vim-sensible.git
     git clone https://github.com/tpope/vim-surround.git
 
+# vim-colors-solarized
+I use GNOME terminal with the Solarized light colour scheme and Solarized
+pallete. Be sure to set both to get correct colours.
+
 # Some useful vim commands
 Loop and printf
 
