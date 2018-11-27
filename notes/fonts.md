@@ -1,6 +1,4 @@
 # Fonts
 A list of packages for Debian.
 
-    fonts-inconsolata
-    fonts-nanum
-    fonts-symbola
+    sudo apt install fonts-inconsolata fonts-nanum fonts-symbola
