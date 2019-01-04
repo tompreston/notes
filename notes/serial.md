@@ -34,3 +34,13 @@ Notes:
         ATTRS{serial}=="FT9FPMI7", SYMLINK+="tty-my-device"
 
     $ sudo udevadm control --reload-rules
+
+# Cable colours
+Some cable colours for a quick reference. This could change with different
+cables. Typically you can just swap TX/RX if you can't see anything via serial.
+If problems persist double check baud, hard/software flow control and device
+status.
+
+    | Device | TX     | RX     |
+    | ------ | ------ | ------ |
+    | FTDI   | Yellow | Orange |
