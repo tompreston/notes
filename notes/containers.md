@@ -61,3 +61,7 @@ Run
 Clean up unused Docker images with:
 
     docker system prune -a -f
+
+Remove all docker images with:
+
+    docker rmi $(docker images -q)
