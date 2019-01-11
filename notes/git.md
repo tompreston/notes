@@ -20,3 +20,7 @@ Short revs
 git am, "error: patch does not apply", try:
 
     git am --reject 0000-my-feature.patch
+
+Statistics of a diff:
+
+    git diff --stat SHA..HEAD
