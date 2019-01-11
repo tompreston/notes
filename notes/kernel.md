@@ -1,3 +1,8 @@
+# Linux Kernel
+References:
+- http://www.kroah.com/lkn/
+- https://lwn.net/Kernel/LDD3/
+
 # Building Linux Kernel
 
     KERNEL=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
