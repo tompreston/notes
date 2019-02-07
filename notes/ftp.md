@@ -8,6 +8,7 @@ Commands:
     ls
     cd
     get
+    put
     help
 
 Using wget:
