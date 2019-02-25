@@ -25,10 +25,15 @@ FROM debian:testing
 
 # Install mesa-demos build env
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
-	autoconf automake build-essential libtool pkg-config
-RUN apt-get install -y libglew-dev freeglut3-dev
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	autoconf \
+	automake \
+	build-essential \
+	libtool \
+	pkg-config
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	freeglut3-dev \
+	libglew-dev
 
 WORKDIR /mesa-demos
 

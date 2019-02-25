@@ -1,8 +1,6 @@
 # Containers
 It all began with chroots. Then came containers.
 
-! You cannot have users in containers, only root !
-
 # systemd-nspawn
 https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
 
@@ -57,3 +55,13 @@ Run
         CONTAINER_ID /bin/bash
     docker ps
     docker cp CONTAINER_ID:/project-dev/asset /to/wherever
+
+
+# Cleaning up Docker
+Clean up unused Docker images with:
+
+    docker system prune -a -f
+
+Remove all docker images with:
+
+    docker rmi $(docker images -q)

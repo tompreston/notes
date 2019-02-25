@@ -1,4 +1,6 @@
-# Automake
+# Autotools
+- Great tutorial https://www.lrde.epita.fr/~adl/autotools.html
+
 Dependencies:
 
     sudo apt install build-essential autoconf automake libtool pkg-config
