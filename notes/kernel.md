@@ -3,6 +3,15 @@ References:
 - http://www.kroah.com/lkn/
 - https://lwn.net/Kernel/LDD3/
 
+# Dependencies
+
+    sudo apt install \
+        buildessentials
+        libelf-dev
+        libssl-dev
+        lzop
+        moreutils
+
 # Building Linux Kernel
 
     KERNEL=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
