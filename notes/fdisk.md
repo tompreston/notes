@@ -1,7 +1,11 @@
 # fdisk
-Delete a partition table (write new DOS partition table):
+Wipe and create a new partition:
 
-    fdisk /dev/mmcblk0
-    o
-    w
+    sudo fdisk /dev/sdb
+    o # delete partition table
+    n # create a new parititon
+    w # write changes to disk
 
+Make sure you format it:
+
+    sudo mkfs.fat /dev/sdb1
