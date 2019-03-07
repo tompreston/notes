@@ -47,6 +47,11 @@ Debug by following:
 
     sudo tail -f /var/log/exim4/mainlog
 
+Send a test email to yourself:
+
+    git format-patch HEAD~1
+    git send-email --to=thomas.preston@domain.co.uk *.patch
+
 # Plain text for Thunderbird:
 
     Account Settings > Composition and Addressing >
