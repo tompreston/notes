@@ -36,4 +36,6 @@ Get dependencies:
 
     export CROSS_COMPILE=aarch64-linux-gnu-
     export ARCH=arm64
+
+    make defconfig  # arch/arm64/configs/defconfig -> .config
     make
