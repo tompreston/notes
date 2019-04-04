@@ -23,11 +23,23 @@ Download:
 Configure:
 
     make defconfig
-    make menuconfig
+    make menuconfig # menuconfig operated on .config
 
 Build:
 
     make
+
+
+# Saving config
+Sometimes you want to change config options using menuconfig, then track them
+using git. Don't just `cp .config arch/$ARCH/configs/mydefconfig` use
+savedefconfig:
+
+    make defconfig     # create .config
+    make menuconfig    # edit .config
+    make savedefconfig # use kbuild to generate defconfig
+    mv defconfig arch/x86/configs/tpreston-defconfig
+    git add arch/x86/configs/tpreston-defconfig
 
 # Cross compiling ARM64
 Get dependencies:
