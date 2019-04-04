@@ -13,18 +13,27 @@ References:
         moreutils
 
 # Building Linux Kernel
+Download:
 
-    KERNEL=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-    git clone $KERNEL
+    kernel=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+    git clone $kernel
+    cd $kernel
+    make help
 
-    make O=$OUT $DEFCONFIG
+Configure:
 
-    make O=$OUT modules
-    make O=$OUT modules_install INSTALL_MOD_PATH=$KMOD_OUT
+    make defconfig
+    make menuconfig
+
+Build:
+
+    make
 
 # Cross compiling ARM64
+Get dependencies:
 
     sudo apt install gcc-aarch64-linux-gnu
 
     export CROSS_COMPILE=aarch64-linux-gnu-
-    make zImage dtbs
+    export ARCH=arm64
+    make
