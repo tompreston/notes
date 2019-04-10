@@ -51,3 +51,18 @@ Get dependencies:
 
     make defconfig  # arch/arm64/configs/defconfig -> .config
     make
+
+# Building out of treee modules
+Sometimes you have a kernel module which is out-of-tree. It can be built using
+the M= argument:
+
+    cd kernel
+    make M=../out_of_tree_module
+
+Although sometimes, the out-of-tree module comes with its own Makefile. For
+example, the Intel i210 Ethernet controller driver `igb_avb`. In this case,
+we just point to the kernel using KSRC and tell make to change-directory first:
+
+    git clone https://github.com/AVnu/igb_avb.git
+    cd kernel
+    KSRC=$PWD make -C ../igb_avb/kmod
