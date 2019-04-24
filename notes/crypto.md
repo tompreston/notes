@@ -1,6 +1,8 @@
 # Cryptography (gnupg)
 - Comprehensive Crypto Guide
   http://sanctum.geek.nz/arabesque/series/gnu-linux-crypto/
+- Use subkeys and backup private master key
+  https://wiki.debian.org/Subkeys?action=show&redirect=subkeys
 - On GnuPG 1 vs 2 https://superuser.com/a/655250/240747
 
 # Getting started
