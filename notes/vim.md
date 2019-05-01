@@ -46,3 +46,8 @@ Clipboard is "+:
 
     "+y
     "+yy
+
+See the currently loaded filetype:
+
+    :set filetype?
+    :set ft?
