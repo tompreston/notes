@@ -66,3 +66,12 @@ we just point to the kernel using KSRC and tell make to change-directory first:
     git clone https://github.com/AVnu/igb_avb.git
     cd kernel
     KSRC=$PWD make -C ../igb_avb/kmod
+
+# Debugging
+Enable `pr_debug` and `dev_debug` by defining DEBUG at the top of the file:
+
+    #define DEBUG
+
+Or, use kbuild:
+
+    https://www.kernel.org/doc/local/pr_debug.txt
