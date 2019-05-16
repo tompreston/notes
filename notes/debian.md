@@ -12,3 +12,7 @@ List/search installed packages:
 Show information about a package:
 
     apt show openssh-client
+
+Download the source of a package (and apply debian patches):
+
+    apt source ltrace
