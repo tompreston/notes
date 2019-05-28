@@ -10,3 +10,9 @@ Remove or add modes:
 
 Typical modes:
 - https://freenode.net/kb/answer/channelmodes
+
+# Clients
+Hexchat does the job but irssi might be more compatible.
+
+## Irssi
+
