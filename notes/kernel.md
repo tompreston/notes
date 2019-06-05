@@ -6,13 +6,14 @@ References:
 # Dependencies
 
     sudo apt install \
-        bc
-        bison
-        buildessentials
-        flex
-        libelf-dev
-        libssl-dev
-        lzop
+        bc \
+        bison \
+        buildessentials \
+        flex \
+        kmod \
+        libelf-dev \
+        libssl-dev \
+        lzop \
         moreutils
 
 # Building Linux Kernel
