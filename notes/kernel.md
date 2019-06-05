@@ -18,9 +18,9 @@ References:
 # Building Linux Kernel
 Download:
 
-    kernel=git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-    git clone $kernel
-    cd $kernel
+    git clone \
+        git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+    cd linux-kernel
     make help
 
 Configure:
