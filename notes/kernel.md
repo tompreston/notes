@@ -6,7 +6,10 @@ References:
 # Dependencies
 
     sudo apt install \
+        bc
+        bison
         buildessentials
+        flex
         libelf-dev
         libssl-dev
         lzop
