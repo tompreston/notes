@@ -13,5 +13,7 @@ Commands:
 
 Using wget:
 
-    wget --ftps-implicit --ftp-user=${FTP_USER} --ftp-pass=${FTP_PASS} \
-        ftp://transfer.domain.co.uk:21/path/to/file
+    wget \
+        --ftp-user='${FTP_USER}' \
+        --ftp-pass='${FTP_PASS}' \
+        "ftps://transfer.domain.co.uk:21/path/to/file"
