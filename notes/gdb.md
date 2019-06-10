@@ -1,4 +1,5 @@
 # GDB
+- Consider using RR instead https://rr-project.org/
 
     gdb a.out
 
@@ -10,3 +11,4 @@ Some obvious gdb commands:
     continue
     next
     step
+    backtrace
