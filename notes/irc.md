@@ -23,7 +23,7 @@ Some weechat config for light terminals:
     fset.color.help_name                 color    default
     irc.color.item_channel_modes         color    white
     irc.server.codethink.addresses       string   "bouncer.codethink.co.uk/6502"
-    irc.server.codethink.autoconnect     boolean  off
+    irc.server.codethink.autoconnect     boolean  on
     irc.server.codethink.password        string   "${sec.data.codethink_password}"
     irc.server.codethink.ssl             boolean  on
     irc.server.codethink.username        string   "thomaspreston/codethink"
