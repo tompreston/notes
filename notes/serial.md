@@ -44,3 +44,8 @@ status.
     | Device | TX     | RX     |
     | ------ | ------ | ------ |
     | FTDI   | Yellow | Orange |
+
+# Debugging
+For terminal issues, try;
+
+    stty sane
