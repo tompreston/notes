@@ -1,4 +1,6 @@
 # Network
+- https://www.incognito.com/tutorials/dhcp-options-in-plain-english/
+
 Use iproute2, not ifconfig.
 
 Set a static IP for eth0:
