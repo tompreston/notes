@@ -1,2 +1,10 @@
 # NVIDIA Jetson
-- https://developer.download.nvidia.com/embedded/L4T/r28_Release_v2.1/l4t_quick_start_guide.txt
+- https://developer.nvidia.com/embedded/linux-tegra
+- https://docs.nvidia.com/jetson/l4t/index.html
+
+# Flashing
+Grab the following:
+- Linux for Tegra driver package (BSP)
+- Sample root file system
+
+Then follow the Quick Start Guide in the L4T development manual.
