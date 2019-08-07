@@ -43,10 +43,17 @@ The -i means "run interactively", and -t means "allocate a pseudo-tty".
     https://docs.docker.com/install/linux/linux-postinstall/
 
 # Building things with docker
-Build
+Build with current env as context:
 
-    docker build -t CONTAINER_ID . # build env
-    docker build  -t CONTAINER_ID -f Dockerfile
+    docker build -t CONTAINER_ID .
+
+Build with specific Dockerfile:
+
+    docker build  -t CONTAINER_ID -f Dockerfile .
+
+Build with no build context (faster):
+
+    docker build  -t CONTAINER_ID - < Dockerfile
 
 Run
 
