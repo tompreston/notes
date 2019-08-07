@@ -17,5 +17,5 @@ Workspace:
     vim hello-src/doc/amhello/src/main.c
     bst build hello.bst
 
-Buildstream knows about the workspace and build from that. You can close to go
+BuildStream knows about the workspace and build from that. You can close to go
 back using the original package.
