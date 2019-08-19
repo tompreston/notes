@@ -72,3 +72,16 @@ Clean up unused Docker images with:
 Remove all docker images with:
 
     docker rmi $(docker images -q)
+
+# Podman
+Rootless OCI https://podman.io/
+
+Essentially:
+
+    alias docker='podman'
+
+On Fedora, SELinux gets in the way of bind-mounts, so make sure to include the
+bind-propagation=z flag:
+
+    podman run -it --mount=type=bind,bind-propagation=z,src=$(pwd),dst=/build \
+        build-tag "make"
