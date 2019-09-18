@@ -17,3 +17,7 @@ Download the source of a package:
 
     dnf download --source openssh
     rpm --query --list openssh-8.0p1-5.fc30.src.rpm
+
+## Change the time
+
+    timedatectl
