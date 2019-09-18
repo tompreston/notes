@@ -85,3 +85,25 @@ bind-propagation=z flag:
 
     podman run -it --mount=type=bind,bind-propagation=z,src=$(pwd),dst=/build \
         build-tag "make"
+
+# Building stuff
+I usually take the following approach when building things:
+
+    ==> Dockerfile <==
+    FROM fedora:30
+
+    # General, cacheable tooling
+    RUN dnf install -y @development-tools
+
+    # Project specific dependencies
+    RUN dnf install -y \
+            libX11-devel \
+            libXtst-devel
+
+    ==> run-build.sh <==
+    #!/bin/bash
+    # Run the build container
+    podman run \
+            --mount=type=bind,bind-propagation=z,src=$(pwd),dst=/mnt \
+            -it build-xdotool \
+            /bin/bash
