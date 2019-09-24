@@ -107,3 +107,10 @@ I usually take the following approach when building things:
             --mount=type=bind,bind-propagation=z,src=$(pwd),dst=/mnt \
             -it build-xdotool \
             /bin/bash
+
+# Debian containers
+For apt-get you'll want to set:
+
+    ARG DEBIAN_FRONTEND=noninteractive
+
+See: https://serverfault.com/a/797318
