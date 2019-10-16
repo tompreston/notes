@@ -1,4 +1,7 @@
 # Laptops to look out for
+- Dell XPS 13
+- [Lenovo x280](https://en.wikipedia.org/wiki/ThinkPad_X_series)
+- [Lenovo t480](https://en.wikipedia.org/wiki/ThinkPad_T_series)
 - Latitude 7480
-- Lenovo t480
-- Dell XPS
+
+Refurbished from tier1online.com
