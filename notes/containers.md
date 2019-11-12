@@ -74,6 +74,8 @@ Remove all docker images with:
     docker rmi $(docker images -q)
 
 # Podman
+- https://bt0dotninja.fedorapeople.org/Containers_101_with_Podman_on_Fedora29.pdf
+- https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/
 Rootless OCI https://podman.io/
 
 Essentially:
