@@ -15,6 +15,11 @@ This note is for debugging inspiration.
 - `SEGFAULT_SIGNALS=ill LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
 - man 7 signals
 - objdump -D -S foo | less
+- coredump
+    - `ulimit -H -c unlimited`
+    - `sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t`
+        - sets /proc/sys/kernel/core_pattern
+    - Or if using systemd, try coredumpctl
 - gcc -g
 - gdb
 - valgrind
