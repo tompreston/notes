@@ -1,14 +1,26 @@
-# Initial
-- Look at schematic
-- Figure out how drivers connect/work/init
-- Run through tutorials, learn technology gotchas
+# Debugging ideas and techniques
+This note is for debugging inspiration.
 
-# Investigation
-- dump_stack(), stack, current->comm,pid, CPU etc
-- strace
+# General
+- Reliably reproduce the bug
+- Compare with know working
+- Reduce differences and iterate
+- Try to bisect the problem
+- Automate `git bisect` with tests
+
+# Userland
+- strace -ff -tt -o foo.trace. ./foo
 - ltrace
-- LD_PRELOAD trick
+- gcc -g
+- LD_PRELOAD=/lib/lib64/libSegFault.so ./foo
+- objdump -D -S foo | less
+- gdb
+- valgrind
 - `mount --bind` over files to replace and/or log
-- regcap/regcmp
-- annotate lowest level reg write
-- binary search, `git bisect`
+
+# Kernel specific
+- dmesg
+- dump_stack()
+- current->comm,pid, CPU etc
+- strace
+- cat /sys/kernel/debug/regmap/device/registers
