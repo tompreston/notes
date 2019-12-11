@@ -11,10 +11,11 @@ This note is for debugging inspiration.
 # Userland
 - strace -ff -tt -o foo.trace. ./foo
 - ltrace
-- gcc -g
-- SEGFAULT_SIGNALS=ill LD_PRELOAD=/lib/lib64/libSegFault.so ./foo [0] [1]
+- ldd or `LD_TRACE_LOADED_OBJECTS=1`
+- `SEGFAULT_SIGNALS=ill LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
 - man 7 signals
 - objdump -D -S foo | less
+- gcc -g
 - gdb
 - valgrind
 - `mount --bind` over files to replace and/or log
