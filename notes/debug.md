@@ -12,7 +12,8 @@ This note is for debugging inspiration.
 - strace -ff -tt -o foo.trace. ./foo
 - ltrace
 - gcc -g
-- LD_PRELOAD=/lib/lib64/libSegFault.so ./foo
+- SEGFAULT_SIGNALS=ill LD_PRELOAD=/lib/lib64/libSegFault.so ./foo [0] [1]
+- man 7 signals
 - objdump -D -S foo | less
 - gdb
 - valgrind
@@ -24,3 +25,6 @@ This note is for debugging inspiration.
 - current->comm,pid, CPU etc
 - strace
 - cat /sys/kernel/debug/regmap/device/registers
+
+[0] https://www.marcusfolkesson.se/blog/libsegfault/
+[1] https://sourceware.org/git/?p=glibc.git;a=blob;f=debug/segfault.c;hb=HEAD
