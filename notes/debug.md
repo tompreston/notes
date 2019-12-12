@@ -16,7 +16,8 @@ This note is for debugging inspiration.
 - man 7 signals
 - objdump -D -S foo | less
 - coredump
-    - `ulimit -H -c unlimited`
+    - `ulimit -a unlimited`
+    - `ulimit -c unlimited`
     - `sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t`
         - sets /proc/sys/kernel/core_pattern
     - Or if using systemd, try coredumpctl
