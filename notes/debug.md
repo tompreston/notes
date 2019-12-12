@@ -19,6 +19,7 @@ This note is for debugging inspiration.
 - coredump
     - `ulimit -a unlimited`
     - `ulimit -c unlimited`
+    - `ulimit -H -c unlimited; ulimit -S -c unlimited` (embedded)
     - `sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t`
         - sets /proc/sys/kernel/core_pattern
     - Or if using systemd, try coredumpctl
