@@ -13,7 +13,7 @@ This note is for debugging inspiration.
 - strace -i -k
 - ltrace
 - ldd or `LD_TRACE_LOADED_OBJECTS=1`
-- `SEGFAULT_SIGNALS=ill LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
+- `SEGFAULT_SIGNALS=all LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
 - man 7 signals
 - objdump -D -S foo | less
 - coredump
