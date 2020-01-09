@@ -33,13 +33,19 @@ Manage it with schroot:
 The profile is a directory in /etc/schroot. Look at /etc/schroot/desktop/fstab
 to see what it does.
 
-Enter the chroot:
+Enter the chroot as a user or root:
 
     schroot -c buster32
+    sudo schroot -c buster32 -u root
 
 Your rootfs should be the chroot, but /home will be mounted according to fstab.
 
 Make sure your PS1 does something with `/etc/debian_chroot` so you know that
 you're in one.
+
+More info:
+
+    man schroot
+    man schroot.conf
 
 See also notes/containers.md
