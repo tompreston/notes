@@ -18,3 +18,10 @@ Backtrace:
     backtrace
     bt
     frame
+
+## Coredump
+
+    $ gdb -c core.dump
+    set solib-search-path
+    info sharedlibrary
+    bt
