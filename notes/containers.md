@@ -1,5 +1,5 @@
 # Containers
-It all began with chroots. Then came containers.
+See also notes/chroot.md.
 
 # systemd-nspawn
 https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
