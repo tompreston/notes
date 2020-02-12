@@ -49,6 +49,11 @@ On embedded systems you may also have to link to the armhf lib:
 
     ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3
 
+This will work for simple binaries, but often you will have to link against
+target libs so you will need a target sysroot. Consider building in something
+like Buildroot.
+
+
 ## Fedora, GCC (impossible)
 Even though it is possible to install the cross-toolchain, we are missing the
 glibc-arm-linux-gnu-devel package - which contains the ARM glibc (crt1.o).
