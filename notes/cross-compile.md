@@ -1,4 +1,5 @@
 # Cross compile
+## Debian, GCC
 On Debian, you will need to install the package:
 
     gcc-arm-linux-gnueabi
@@ -47,3 +48,16 @@ Compile as normal:
 On embedded systems you may also have to link to the armhf lib:
 
     ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3
+
+## Fedora, GCC (impossible)
+Even though it is possible to install the cross-toolchain, we are missing the
+glibc-arm-linux-gnu-devel package - which contains the ARM glibc (crt1.o).
+
+    dnf install \
+        binutils-arm-linux-gnu \
+        gcc-arm-linux-gnu \
+        gcc-c++-arm-linux-gnu
+
+Just build in a Debian chroot/container.
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1456209
