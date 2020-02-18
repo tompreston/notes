@@ -14,10 +14,10 @@ Set a static IP for eth0:
 
 Set default route:
 
-    route add default gw 192.168.x.111
+    ip route add default via 192.168.90.111 dev eth0
 
 
-# NetworkManager (debian)
+# NetworkManager
 You can access NetworkManager from the cli:
 
     nmcli
@@ -33,6 +33,12 @@ Use `host` to search DNS for hostname:
     $ host HOSTNAME DNS-IP
 
 ifup/ifdown will reassociate using dhclient
+
+
+# Traceroute
+We can use traceroute follow hops to a given IP.
+
+    traceroute 10.35.7.2
 
 
 # Forward IP traffic through device (eg. network - raspberry pi - devkit)
