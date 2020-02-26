@@ -25,3 +25,5 @@ Download the source of a package:
 ## Change the time
 
     timedatectl
+    timedatectl list-timezones
+    timedatectl set-timezone Europe/Berlin
