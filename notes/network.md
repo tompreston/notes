@@ -49,7 +49,7 @@ Just looked this up [0], you need to setup the pi as a router:
     root@ts-rig1:~# iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
     root@ts-rig1:~# iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
 
-Then add a default route on the buck:
+Then add a default route on the device:
 
     # ip route add default via 192.168.90.133 dev toucan
     # ip route
