@@ -29,6 +29,10 @@ This note is for debugging inspiration.
 - valgrind
 - `mount --bind` over files to replace and/or log
 
+# Network and I/O
+- Are we seeing lots of interrupts in `vmstat 1` or /proc/{interrupts,softirqs}
+- `netstat -ap`
+
 # Kernel specific
 - dmesg
 - dump_stack()
