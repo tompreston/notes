@@ -54,3 +54,24 @@ Only the recipient can decrypt the message:
 We can also sign encrypted messages, to verify it came from us:
 
     gpg --armor --recipient $KEYID --sign --encrypt secret-message.txt
+
+
+# Renewing expiry date
+- https://superuser.com/a/1141251
+
+    gpg --list-keys
+    gpg --edit-key ${KEY_ID}
+    gpg> expire
+    gpg> key 1
+    gpg> expire
+    gpg> save
+
+# Export and import
+Export from backup:
+
+    gpg --homedir=/tmp/gnupg-backup/.gnupg --export-secret-key ${KEY_ID} \
+        > /tmp/key-id-secret-key.asc
+
+Import to normal:
+
+    gpg --import /tmp/key-id-secret-key.asc
