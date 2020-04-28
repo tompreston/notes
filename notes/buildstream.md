@@ -19,3 +19,19 @@ Workspace:
 
 BuildStream knows about the workspace and build from that. You can close to go
 back using the original package.
+
+## Debugging
+You can create a BuildStream stack, which groups together elements:
+
+    $ cat elements/tpreston-debug.bst
+    kind: stack
+
+    runtime-depends:
+    - freedesktop-sdk.bst:components/gdb.bst
+    - freedesktop-sdk.bst:components/strace.bst
+    - sdk/gtk+-3.bst
+
+    $ bst build tpreston-debug.bst
+    $ bst shell tpreston-debug.bst
+    > strace gtk3-demo
+    > gdb gtk3-demo
