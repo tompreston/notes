@@ -27,3 +27,8 @@ Download the source of a package:
     timedatectl
     timedatectl list-timezones
     timedatectl set-timezone Europe/Berlin
+
+## Copr
+Remove a copr repo:
+
+    sudo dnf copr remove pschyska/alacritty
