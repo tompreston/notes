@@ -20,6 +20,11 @@ Workspace:
 BuildStream knows about the workspace and build from that. You can close to go
 back using the original package.
 
+Freeze an element at the current track HEAD:
+
+    bst track hello.bst
+
+
 ## Debugging
 You can create a BuildStream stack, which groups together elements:
 
