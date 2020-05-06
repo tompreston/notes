@@ -31,6 +31,13 @@ Use kpartx to mount images on the loopback:
     add map loop0p11 (253:14): 0 256 linear 7:0 20480
     add map loop0p12 (253:15): 0 160 linear 7:0 22528
 
+    $ sudo mount /dev/mapper/loop0p1 /mnt
+
+When you're done:
+
+    $ sudo umount /mnt
+    $ sudo kpartx -d mmc.img
+
 ## sfdisk
 Dump a partition table:
 
