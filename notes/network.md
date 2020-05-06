@@ -1,7 +1,14 @@
 # Network
 - https://www.incognito.com/tutorials/dhcp-options-in-plain-english/
 
-Use iproute2, not ifconfig.
+Prefer
+- NetworkManager
+- iproute2
+- iw
+
+Do not use:
+- wireless-tools (iwlist, iwconfig)
+- ifconfig
 
 Set a static IP for eth0:
 
