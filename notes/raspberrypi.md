@@ -1,4 +1,7 @@
 # Raspberry Pi notes
+Hardware documentation
+- https://www.raspberrypi.org/documentation/hardware/raspberrypi/
+
 GPIO mapping
 
     https://pinout.xyz/
