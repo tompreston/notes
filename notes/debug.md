@@ -39,6 +39,8 @@ This note is for debugging inspiration.
 - current->comm,pid, CPU etc
 - strace
 - cat /sys/kernel/debug/regmap/device/registers
+- kernel can't find working /sbin/init.../bin/sh, then try setting
+  `init=/bin/sh`, it will give you a backtrace (maybe libs are broke)
 
 [0] https://www.marcusfolkesson.se/blog/libsegfault/
 [1] https://sourceware.org/git/?p=glibc.git;a=blob;f=debug/segfault.c;hb=HEAD
