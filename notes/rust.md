@@ -32,3 +32,59 @@ implementation.
 
 Clone is a bit more involved - sometimes a data structure references data on
 the heap so it needs a "deep" copy, which is what clone is.
+
+## Result, Option
+- Result<T, E> is either Ok(T) or Err(E)
+- Option<T> is either Some(T) or None.
+
+The preferred way to handle these is explicitly, using a match:
+
+    match opt {
+        Some(v) => v,
+        None => 0,
+    }
+
+    match res {
+        Ok(v) => println!("working {:?}", v),
+        Err(e) => println!("error {:?}", e),
+    }
+
+Or using the shorthand unwrap functions:
+
+    opt.unwrap_or_default()
+    res.unwrap_or(default_value)
+    opt.unwrap_or_else(|x| 2 * x)
+
+Try to avoid using `unwrap()` or `expect()` which cause panics.
+
+    "4".parse().unwrap();
+    "4".parse().expect("Same as unwrap, but with error message");
+
+## `ok_or` (Option only)
+Transforms the Option<T> into a Result<T, E>, mapping Some(v) to Ok(v) and None
+to Err(err).
+
+    opt.ok_or("Error message, if Option was None")
+    opt.ok_or_else(|x| 2 * x)
+
+## Try (Result only)
+You can use the "try" operator "?" to unwrap Results, or propagate the error:
+
+    fn write_to_file_question() -> Result<(), std::io::Error> {
+        let mut file = File::create("my_best_friends.txt")?;
+        file.write_all(b"This is a list of my best friends.")?;
+        Ok(())
+    }
+
+Remember: This expands to returning an Err(), so the return type has to be a
+Result.
+
+See more: https://doc.rust-lang.org/std/macro.try.html
+
+## parse() -> Result
+Use parse to convert strings into other types:
+
+    let n: usize = "4".parse().unwrap();
+    let n: usize = "4".parse()?;
+
+Remember: it returns a Result! So handle that appropriately. Avoid unwrap().
