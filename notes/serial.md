@@ -6,9 +6,14 @@ minicom default settings
 
     baud: 115200 8N1, flow control: N
 
+Setting terminal width over UART:
+
+    stty rows 50 cols 132
+
 # minicom
-setup
-sudo minicom -s
+Setup
+
+    sudo minicom -s
 
 Example:
 
@@ -49,3 +54,9 @@ status.
 For terminal issues, try;
 
     stty sane
+
+Pulseview (from sigrok) can view signals on USB serial.
+
+RS232 has different levels to TTL:
+
+    https://www.sparkfun.com/tutorials/215
