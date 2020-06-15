@@ -26,3 +26,7 @@ Although the audit.log is a bit hard to sift though, so use ausearch:
 ## Debian Logging
 
     sudo less /var/log/auth.log
+
+## Searching for logs
+
+    lsof | grep -iE "log|txt"
