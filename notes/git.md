@@ -24,3 +24,8 @@ git am, "error: patch does not apply", try:
 Statistics of a diff:
 
     git diff --stat SHA..HEAD
+
+Get the branch name:
+
+    git branch
+    git rev-parse --abbrev-ref HEAD
