@@ -88,3 +88,27 @@ Use parse to convert strings into other types:
     let n: usize = "4".parse()?;
 
 Remember: it returns a Result! So handle that appropriately. Avoid unwrap().
+
+## Lifetime elision
+Rust has a great chapter on this:
+- https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-elision
+
+To summarise, the Rust compiler works it out using these rules, but sometimes
+you have to be explicit.
+
+1. Each parameter gets itw own lifetime parameter.
+
+    fn foo<'a, 'b>(x: &'a i32, y: &'b i32);
+
+2. If there is exactly one input lifetime parameter, that lifetime is assigned
+   to all output lifetime parameters:
+
+    fn foo<'a>(x: &'a i32) -> &'a i32.
+
+3. If there are multiple input lifetime parameters, but one of them is &self or
+   &mut self because this is a method, the lifetime of self is assigned to all
+   output lifetime parameters.
+
+    impl<'a> ImportantExcerpt<'a> {
+        fn foo<'s, 'a, 'b>(&'s self, x: &'a i32, y: &'b i32) -> &'s i32;
+    }
