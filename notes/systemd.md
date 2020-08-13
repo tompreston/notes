@@ -8,3 +8,8 @@
     coredumpctl debug
     coredumpctl info 6654
     coredumpctl -o bar.coredump dump /usr/bin/bar
+
+## Analyse
+Cool boot time plot:
+
+    systemd-analyse plot > /tmp/systemd-plot.svg
