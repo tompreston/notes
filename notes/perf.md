@@ -23,3 +23,25 @@ Record PID 375 for 10 seconds:
 
     perf record -F 1000 -p 375 -g -- sleep 10
     perf report -n --stdio > /tmp/trace.txt
+
+# strace
+We can get some statistics from strace. Prints on kill:
+
+    root@8x96autogvmquin:~# strace -c -p 375
+    strace: Process 375 attached
+    ^Cstrace: Process 375 detached
+    % time     seconds  usecs/call     calls    errors syscall
+    ------ ----------- ----------- --------- --------- ----------------
+     95.88    0.020000        1333        15           epoll_pwait
+      3.39    0.000707           2       294           epoll_ctl
+      0.73    0.000152          10        15           close
+      0.00    0.000000           0        15           epoll_create1
+      0.00    0.000000           0         8           ioctl
+      0.00    0.000000           0         7           read
+      0.00    0.000000           0         8           write
+      0.00    0.000000           0         7           sendto
+      0.00    0.000000           0        24           recvfrom
+    ------ ----------- ----------- --------- --------- ----------------
+    100.00    0.020859                   393           total
+
+Here something is using epoll stuff waaaaay too much.
