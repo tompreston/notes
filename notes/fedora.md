@@ -18,6 +18,10 @@ Download the source of a package:
     dnf download --source openssh
     rpm --query --list openssh-8.0p1-5.fc30.src.rpm
 
+List files in a package:
+
+    dnf repoquery -l v4l-utils
+
 ## Development
 
     dnf install @development-tools
