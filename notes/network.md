@@ -24,6 +24,12 @@ Set default route:
     ip route add default via 192.168.90.111 dev eth0
 
 
+# ifup/ifdown
+If just using /etc/networking/interface*, use ifup/ifdown commands.
+
+More info https://wiki.debian.org/NetworkConfiguration#Setting_up_an_Ethernet_Interface
+
+
 # NetworkManager
 You can access NetworkManager from the cli:
 
