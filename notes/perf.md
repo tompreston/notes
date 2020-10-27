@@ -17,12 +17,21 @@ Free-run to display counters of gnome-terminal-server over 5 seconds:
     perf stat -p $(pidof gnome-terminal-server) -- sleep 5
 
 # Recording
-TODO more notes on this, it's really useful and shows userland behaviour.
-
 Record PID 375 for 10 seconds:
 
     perf record -F 1000 -p 375 -g -- sleep 10
+
+Print a plaintext report:
+
     perf report -n --stdio > /tmp/trace.txt
+
+Or use the data to generate a flamegraph:
+
+    perf script > script.perf
+    git clone https://github.com/brendangregg/FlameGraph.git
+    cd FlameGraph
+    cat ../script.perf | ./stackcollapse-perf.pl > out.perf-folded
+    ./flamegraph.pl out.perf-folded > pid375-flamegraph.svg
 
 # strace
 We can get some statistics from strace. Prints on kill:
