@@ -83,3 +83,9 @@ Then add a default route on the device:
     64 bytes from 216.58.213.14: seq=0 ttl=56 time=10.088 ms
 
 [0] https://www.tecmint.com/setup-linux-as-router/
+
+# tcpdump
+You can use tcpdump to record network traffic. Here is a useful guide:
+- https://danielmiessler.com/study/tcpdump/
+
+    tcpdump -i eth0 -w capture.pcap
