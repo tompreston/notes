@@ -112,3 +112,22 @@ you have to be explicit.
     impl<'a> ImportantExcerpt<'a> {
         fn foo<'s, 'a, 'b>(&'s self, x: &'a i32, y: &'b i32) -> &'s i32;
     }
+
+## Cross-compiling
+Rust uses LLVM backend, so it's one-toolchain-multi-target. You can add new
+targets to your `x86_64` (host) Rust toolchain like this:
+
+    rustup target add aarch64-unknown-linux-gnu
+    rustup target add x86_64-pc-windows-gnu
+
+Make sure the aarch64 linker is installed:
+
+    gcc-aarch64-linux-gnu
+
+And make sure cargo and find the linker:
+
+    [target.aarch64-unknown-linux-gnu]
+    linker = "aarch64-linux-gnu-gcc"
+
+It's non-trivial to install cross-compilers on Fedora. Do it in a container or
+CI. See also: https://github.com/rust-embedded/cross
