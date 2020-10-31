@@ -17,3 +17,7 @@ Old devices don't support h.264 so use baseline level 3 instead of main:
 Trim videos:
 
     ffmpeg -ss 00:00:00 -t 00:30:00 -i input.avi -vcodec copy -acodec copy output1.avi
+
+Concatenate videos:
+
+    https://trac.ffmpeg.org/wiki/Concatenate
