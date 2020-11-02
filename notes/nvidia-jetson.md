@@ -8,3 +8,6 @@ Grab the following:
 - Sample root file system
 
 Then follow the Quick Start Guide in the L4T development manual.
+
+# Vibrante
+Virbrante is now called DRIVE OS, and is unrealted to Jetpack/Jetson.
