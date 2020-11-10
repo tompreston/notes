@@ -1,4 +1,7 @@
 # Disk paritions
+For formatting, consider GUI tooling such as GNOME Disks or gparted. You don't
+have to remember how they work and are often more robust.
+
 ## fdisk
 Wipe and create a new partition:
 
