@@ -89,3 +89,23 @@ You can use tcpdump to record network traffic. Here is a useful guide:
 - https://danielmiessler.com/study/tcpdump/
 
     tcpdump -i eth0 -w capture.pcap
+
+# Captive Portal
+For whatever reason, captive portals don't always work on Linux (eg. it breaks
+in Fedora 33, probably because of some domain name resolver change).  To
+debug/fix, use route, curl, nmap to find out the gateway IP, then manually add
+the domain into /etc/hosts.
+
+    $ curl 8.8.8.8
+    [snip]
+    <LoginURL>https://crosscountrywifi.co.uk/connect?res=wispr&amp;uamip=192.168.101.1&amp;uamport=3990&amp;challenge=3b36a4a892ee976a02de8662066098fa</LoginURL>
+    [snip]
+
+    $ tail -1 /etc/hosts
+    192.168.101.1   crosscountrywifi.co.uk
+
+Once you've managed to log in, the DNS is probably broken. Inspect it, and
+remove the broken one with an empty string (to fallback on the global defaults):
+
+    resolvectl status
+    resolvectl dns 4 ""
