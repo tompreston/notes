@@ -21,3 +21,28 @@ Trim videos:
 Concatenate videos:
 
     https://trac.ffmpeg.org/wiki/Concatenate
+
+Add frame number to each frame (https://stackoverflow.com/a/15369938):
+
+    ffmpeg \
+        -i "$input" \
+        -vf "drawtext=fontfile=Arial.ttf:
+            text='%{frame_num}':
+            start_number=1:
+            x=(w-tw)/2:
+            y=h-(2*lh):
+            fontcolor=black:
+            fontsize=20:
+            box=1:
+            boxcolor=white:
+            boxborderw=5" \
+        -c:a copy numbered.mov
+
+Or show frame times using mpv. Use , and . to move frame by frame, you can see
+the frame time on the CLI:
+
+    mpv --osd-fractions video-240fps.mov
+
+Dump the frames:
+
+    ffmpeg -i numbered.mov "frames/%04d.jpg"
