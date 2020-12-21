@@ -11,9 +11,11 @@ This note is for debugging inspiration.
 # Userland
 - strace -ff -tt -o foo.trace. ./foo
 - strace -i -k
+- See perf notes
 - ltrace
-- ldd or `LD_TRACE_LOADED_OBJECTS=1`
-- If the dynamic linker is rubbish, check running process maps /proc/$pid/maps
+- ldd, `LD_TRACE_LOADED_OBJECTS=1`, or check running process maps /proc/$pid/maps
+- Inject custom (debug) libraries with `LD_LIBRARY_PATH` or `LD_PRELOAD`
+- If `LD_LIBRARY_PATH` doesn't work, add to /etc/ld.so.conf and run `ldconfig`
 - `SEGFAULT_SIGNALS=all LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
 - man 7 signals
 - objdump -D -S foo | less
