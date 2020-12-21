@@ -33,6 +33,15 @@ Or use the data to generate a flamegraph:
     cat ../script.perf | ./stackcollapse-perf.pl > out.perf-folded
     ./flamegraph.pl out.perf-folded > pid375-flamegraph.svg
 
+Record system-wide backtraces for all syscalls. Eg. Show me all functions who
+called `epoll_create1()` in the next 60 seconds:
+
+    perf record -e syscalls:sys_enter_epoll_create1 -g -a sleep 60
+    perf script
+
+You can then write awk scripts to parse this and figure out who is calling it
+the most often, then try to optimise there.
+
 # strace
 We can get some statistics from strace. Prints on kill:
 
