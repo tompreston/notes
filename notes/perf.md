@@ -29,9 +29,8 @@ Or use the data to generate a flamegraph:
 
     perf script > script.perf
     git clone https://github.com/brendangregg/FlameGraph.git
-    cd FlameGraph
-    cat ../script.perf | ./stackcollapse-perf.pl > out.perf-folded
-    ./flamegraph.pl out.perf-folded > pid375-flamegraph.svg
+    cat script.perf | FlameGraph/stackcollapse-perf.pl > out.perf-folded
+    FlameGraph/flamegraph.pl out.perf-folded > pid375-flamegraph.svg
 
 Record system-wide backtraces for all syscalls. Eg. Show me all functions who
 called `epoll_create1()` in the next 60 seconds:
