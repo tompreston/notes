@@ -56,9 +56,10 @@ Force a build from the `do_unpack` stage:
 
     bitbake -C unpack $recipie-name
 
-See which recipes built a package:
+Find the recipe-space package providing the specified target path:
 
-    oe-pkgdata-util find-path /path/to/package
+    oe-pkgdata-util find-path /path/on/target
+    oe-pkgdata-util find-path /usr/lib64/libPocoCrypto.so.71
 
 # Normal recipe build tasks:
 
