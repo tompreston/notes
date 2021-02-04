@@ -1,28 +1,13 @@
 # Containers
+* https://opencontainers.org/
+
 See also notes/chroot.md.
 
-# systemd-nspawn
-https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
-
-    systemd-nspawn
-    machinectl
-
-Machines are stored at:
-
-    /var/lib/machines
-
-Install:
-
-    sudo apt install systemd-containers
-    sudo -i
-    cd /var/lib/machines
-    debootstrap testing deb-testing http://deb.debian.org/debian/
-
-Chroot into other architectures:
-
-    sudo systemd-nspawn --bind /usr/bin/qemu-arm-static -UD mnt
-
--U for randomised root user ID, omit if you want to use 0.
+# Terminology
+* Prefer "container" to "docker container".
+    * Docker is just one type of container engine (Docker, CRI-O, containerd).
+* Prefer podman to docker, since it can run containers as a non-privileged user.
+* Group of containers is called a "pod", hence Pod Manager.
 
 # Docker
 Docker https://docs.docker.com/get-started/
@@ -43,13 +28,10 @@ The -i means "run interactively", and -t means "allocate a pseudo-tty".
     https://docs.docker.com/install/linux/linux-postinstall/
 
 # Building things with docker
-Build with current env as context:
+Build with `$SOME_DIR` as context:
 
-    docker build -t CONTAINER_ID .
-
-Build with specific Dockerfile:
-
-    docker build  -t CONTAINER_ID -f Dockerfile .
+    vim "$SOME_DIR/Dockerfile"
+    docker build -t CONTAINER_ID "$SOME_DIR/"
 
 Build with no build context (faster):
 
@@ -58,7 +40,8 @@ Build with no build context (faster):
 Run
 
     docker images
-    docker run -it --mount source="$(realpath ../src)",target=/src,type=bind \
+    docker run -it \
+        --mount source="$(realpath ../src)",target=/src,type=bind \
         CONTAINER_ID /bin/bash
     docker ps
     docker cp CONTAINER_ID:/project-dev/asset /to/wherever
@@ -110,9 +93,32 @@ I usually take the following approach when building things:
             -it build-xdotool \
             /bin/bash
 
-# Debian containers
-For apt-get you'll want to set:
+# Container images
+## Debian
+For apt-get you'll want to set (see: https://serverfault.com/a/797318):
 
     ARG DEBIAN_FRONTEND=noninteractive
 
-See: https://serverfault.com/a/797318
+
+# systemd-nspawn
+https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html
+
+    systemd-nspawn
+    machinectl
+
+Machines are stored at:
+
+    /var/lib/machines
+
+Install:
+
+    sudo apt install systemd-containers
+    sudo -i
+    cd /var/lib/machines
+    debootstrap testing deb-testing http://deb.debian.org/debian/
+
+Chroot into other architectures:
+
+    sudo systemd-nspawn --bind /usr/bin/qemu-arm-static -UD mnt
+
+-U for randomised root user ID, omit if you want to use 0.

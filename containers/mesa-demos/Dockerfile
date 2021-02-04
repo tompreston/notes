@@ -10,15 +10,13 @@
 #
 # Create the image (from this dir):
 #
-# 	docker build -t mesa-demos -f mesa-demos.Dockerfile
+# 	podman build -t mesa-demos containers/mesa-demos
 #
-# Download mesa-demos:
+# Download mesa-demos and build in the container:
 #
 #	git clone git://anongit.freedesktop.org/git/mesa/demos
-#
-# Build in the container:
-#
-# 	docker run -it --mount=type=bind,src="$PWD/demos",dst=/mesa-demos \
+#	podman run -it \
+#	--mount=type=bind,src="$PWD/demos",dst=/mesa-demos \
 #		mesa-demos
 #
 FROM debian:testing
