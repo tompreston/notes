@@ -12,13 +12,14 @@ This note is for debugging inspiration.
 - strace -ff -tt -o foo.trace. ./foo
 - strace -i -k
 - See perf notes
-- ltrace
+- ltrace (deprecated I think, use perf instead)
 - ldd, `LD_TRACE_LOADED_OBJECTS=1`, or check running process maps /proc/$pid/maps
 - Inject custom (debug) libraries with `LD_LIBRARY_PATH` or `LD_PRELOAD`
 - If `LD_LIBRARY_PATH` doesn't work, add to /etc/ld.so.conf and run `ldconfig`
 - `SEGFAULT_SIGNALS=all LD_PRELOAD=/lib/lib64/libSegFault.so ./foo` [0] [1]
 - man 7 signals
 - objdump -D -S foo | less
+- readelf -d libbar.so
 - coredump
     - `ulimit -a unlimited`
     - `ulimit -c unlimited`
@@ -29,7 +30,7 @@ This note is for debugging inspiration.
 - gcc -g
 - gdb
 - valgrind
-- `mount --bind` over files to replace and/or log
+- Replace RO files with `mount --bind`, replace with a shell script to add logging
 
 # Network and I/O
 - Are we seeing lots of interrupts in `vmstat 1` or /proc/{interrupts,softirqs}
