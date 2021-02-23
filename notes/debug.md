@@ -11,6 +11,9 @@ This note is for debugging inspiration.
 # Userland
 - strace -ff -tt -o foo.trace. ./foo
 - strace -i -k
+- dstat, to look at IO usage
+- opensnoop (TODO look into this), github.com/iovisor/bcc
+- netstat -tunapl (tunaplease!) to see open ports
 - See perf notes
 - ltrace (deprecated I think, use perf instead)
 - ldd, `LD_TRACE_LOADED_OBJECTS=1`, or check running process maps /proc/$pid/maps
