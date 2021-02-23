@@ -16,6 +16,10 @@ Free-run to display counters of gnome-terminal-server over 5 seconds:
 
     perf stat -p $(pidof gnome-terminal-server) -- sleep 5
 
+Or top functions:
+
+    perf top
+
 # Recording
 Record PID 375 for 10 seconds:
 
