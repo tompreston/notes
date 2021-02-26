@@ -1,18 +1,36 @@
-# Disk paritions
-For formatting, consider GUI tooling such as GNOME Disks or gparted. You don't
-have to remember how they work and are often more robust.
+# Format Disk Paritions
+For formatting disks, consider:
+
+* fdisk, interactive CLI, easier than you think
+* partx, scriptable
+* gparted, GUI interface, robust
+* parted, modern, not sure why you'd use this over fdisk
 
 ## fdisk
 Wipe and create a new partition:
 
-    sudo fdisk /dev/sdb
-    o # delete partition table
-    n # create a new parititon
-    w # write changes to disk
+	fdisk /dev/sdb
+	o # delete partition table
+	d # delete partitions
+	n # create a new parititon
+	w # write changes to disk
 
-Make sure you format it:
+Then format each partition:
 
-    sudo mkfs.fat /dev/sdb1
+	mkfs.fat /dev/sdb1
+	mkfs.btrfs /dev/sdb2
+
+Or create an encrypted partition with a passphrase:
+
+	cryptsetup luksFormat /dev/sda2
+
+Create the mapping to unlock and use it like a normal disk:
+
+	cryptsetup open /dev/sda2 tpreston-ext --type luks
+	mkfs.btrfs /dev/mapper/tpreston-ext
+	mount /dev/mapper/tpreston-ext /mnt
+	umount /mnt
+	cryptsetup close tpreston-ext
 
 ## kpartx
 Use kpartx to mount images on the loopback:
