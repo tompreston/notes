@@ -4,9 +4,10 @@
 * Stop open loops by externalising tasks (make a list)
 * Transfer inbox to organiser and then clear. Plan in organiser.
 * Do it (<2 mins), delegate it, defer it, drop it.
+* Promote Next Actions - it presupposes change.
 
 Natural planning stages:
-1. Define purpose and principles. **Why** are you doing this?
+1. Define purpose and principles. **Why** are you doing this? And to what standard?
 2. Visualise/clarify the successful outcome. Think big.
 3. Brainstorming, idea generation.
 4. Organise, planning.
@@ -14,9 +15,5 @@ Natural planning stages:
 
 Unnatural planning is reactive and the usually the reverse of the above.
 Typically starting with unorganised action, and if that makes little progress,
-a plan is made, then brainstorming, and finally someone asks why are we doing
-this?
-
-## Preferred tools
-* GitLab issues for work.
-* Google calendar for time-specific events, dates.
+a plan is made, then brainstorming, and finally someone asks "Why are we doing
+this again?"
