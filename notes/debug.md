@@ -13,7 +13,7 @@ This note is for debugging inspiration.
 - strace -i -k
 - dstat, to look at IO usage
 - opensnoop (TODO look into this), github.com/iovisor/bcc
-- netstat -tunapl (tunaplease!) to see open ports
+- netstat -tunapl (tunaplease!) to see open ports https://writing.natwelch.com/post/581
 - See perf notes
 - ltrace (deprecated I think, use perf instead)
 - ldd, `LD_TRACE_LOADED_OBJECTS=1`, or check running process maps /proc/$pid/maps
@@ -35,9 +35,14 @@ This note is for debugging inspiration.
 - valgrind
 - Replace RO files with `mount --bind`, replace with a shell script to add logging
 
-# Network and I/O
+# Network and I/O specific
 - Are we seeing lots of interrupts in `vmstat 1` or /proc/{interrupts,softirqs}
+- dstat
 - `netstat -ap`
+- `netstat -tunapl`
+- ngrep -d any metafilter, http://metafilter.com
+- tcpdump port 8997 -w service.pcap
+- wireshark
 
 # Kernel specific
 - dmesg
