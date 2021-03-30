@@ -1,31 +1,23 @@
 # Containers
-* https://opencontainers.org/
+* OCI https://opencontainers.org/
+* https://podman.io/
+* https://docs.docker.com/get-started/
 
 See also notes/chroot.md.
 
-# Terminology
 * Prefer "container" to "docker container".
     * Docker is just one type of container engine (Docker, CRI-O, containerd).
 * Prefer podman to docker, since it can run containers as a non-privileged user.
 * Group of containers is called a "pod", hence Pod Manager.
 
-# Docker
-Docker https://docs.docker.com/get-started/
-Download and run containers
-
+# Download and run containers
 How can I keep a docker debian container open?
 https://stackoverflow.com/questions/34863645
 
-    docker build . # Expects ./Dockerfile
-    docker run -it debian /bin/bash
+    podman build . # Expects ./Dockerfile
+    podman run -it debian /bin/bash
 
 The -i means "run interactively", and -t means "allocate a pseudo-tty".
-
-# Docket/Debian
-
-    https://hub.docker.com/_/debian/
-    https://docs.docker.com/install/linux/docker-ce/debian/
-    https://docs.docker.com/install/linux/linux-postinstall/
 
 # Building things with docker
 Build with `$SOME_DIR` as context:
@@ -46,15 +38,19 @@ Run
     docker ps
     docker cp CONTAINER_ID:/project-dev/asset /to/wherever
 
+# Cleaning up containers
+Clean up unused Docker images with (which you can run regularly):
 
-# Cleaning up Docker
-Clean up unused Docker images with:
+    podman system prune
 
-    docker system prune -a -f
+Or be a bit more aggressive:
 
-Remove all docker images with:
+    podman system prune -a -f
 
-    docker rmi $(docker images -q)
+Sometimes you'll need to do a bit of manual removing:
+
+    podman ps | xargs docker kill
+    docker images -q | docker rmi
 
 # Podman
 - https://bt0dotninja.fedorapeople.org/Containers_101_with_Podman_on_Fedora29.pdf
@@ -92,6 +88,12 @@ I usually take the following approach when building things:
             --mount=type=bind,bind-propagation=z,src=$(pwd),dst=/mnt \
             -it build-xdotool \
             /bin/bash
+
+# Docker/Debian
+
+    https://hub.docker.com/_/debian/
+    https://docs.docker.com/install/linux/docker-ce/debian/
+    https://docs.docker.com/install/linux/linux-postinstall/
 
 # Container images
 ## Debian
