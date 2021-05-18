@@ -41,7 +41,13 @@ List all recipes:
 
 Show all versions of packages:
 
+    bitbake --show-versions
     bitbake -s
+    bitbake -s | grep python
+
+Show build environment of a package:
+
+    bitbake -e
 
 Run `do_compile` or `do_clean`:
 
@@ -60,6 +66,11 @@ Find the recipe-space package providing the specified target path:
 
     oe-pkgdata-util find-path /path/on/target
     oe-pkgdata-util find-path /usr/lib64/libPocoCrypto.so.71
+
+List all packages in an image:
+
+    bitbake -g my-final-image
+    grep -v "native" pn-buildlist | sort -u
 
 # Normal recipe build tasks:
 
