@@ -35,6 +35,7 @@ This note is for debugging inspiration.
 - valgrind
 - Replace RO files with `mount --bind`, replace with a shell script to add logging
 
+
 # Network and I/O specific
 - Are we seeing lots of interrupts in `vmstat 1` or /proc/{interrupts,softirqs}
 - dstat
@@ -52,6 +53,9 @@ This note is for debugging inspiration.
 - cat /sys/kernel/debug/regmap/device/registers
 - kernel can't find working /sbin/init.../bin/sh, then try setting
   `init=/bin/sh`, it will give you a backtrace (maybe libs are broke)
+- Set kernel command line
+- grep term /proc/kallsyms
+- ftrace, /sys/kernel/debug/tracing/, enable trace events for some time, then check trace_pipe
 
 [0] https://www.marcusfolkesson.se/blog/libsegfault/
 [1] https://sourceware.org/git/?p=glibc.git;a=blob;f=debug/segfault.c;hb=HEAD
