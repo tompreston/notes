@@ -1,4 +1,7 @@
 # IRC
+TODO
+* Libera.chat
+
 List channel modes:
 
     /mode #channel
