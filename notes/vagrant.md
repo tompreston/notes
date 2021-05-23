@@ -16,3 +16,4 @@ Commands:
 	vagrant ssh
 	vagrant ssh-config
 
+https://wiki.debian.org/Teams/Cloud/VagrantQuickStart
