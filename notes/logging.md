@@ -7,6 +7,8 @@ Dump the kernel log:
     dmesg
 
 ## systemd journal
+* https://fedoramagazine.org/systemd-using-journal/
+
 Look at system log for this boot, or all:
 
     journalctl --boot
