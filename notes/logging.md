@@ -14,6 +14,10 @@ Look at system log for this boot, or all:
     journalctl --boot
     journalctl -b
 
+Or specific units on this boot since yesterday:
+
+    journalctl -b -u NetworkManager --since='yesterday'
+
     journalctl --all
     journalctl -a
 
