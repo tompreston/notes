@@ -1,10 +1,16 @@
 # Logging
+* [Kafka distributed logging](http://kafka.apache.org/)
+
+## Linux kernel
 Dump the kernel log:
 
     dmesg
 
 ## systemd journal
-Look at system log:
+Look at system log for this boot, or all:
+
+    journalctl --boot
+    journalctl -b
 
     journalctl --all
     journalctl -a
