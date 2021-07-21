@@ -14,6 +14,7 @@ This note is for debugging inspiration.
 - dstat, to look at IO usage
 - opensnoop (TODO look into this), github.com/iovisor/bcc
 - netstat -tunapl (tunaplease!) to see open ports https://writing.natwelch.com/post/581
+- netstat -anpW (tunaplease doesn't show UNIX Domain Sockets)
 - See perf notes
 - ltrace (deprecated I think, use perf instead)
 - ldd, `LD_TRACE_LOADED_OBJECTS=1`, or check running process maps /proc/$pid/maps
