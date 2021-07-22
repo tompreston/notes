@@ -9,7 +9,8 @@ This note is for debugging inspiration.
 - Automate `git bisect` with tests
 
 # Userland
-- strace -ff -tt -o foo.trace. ./foo
+- strace -ff -tt -yy -o foo.trace. ./foo
+- strace -ff -tt -yy -x -e read=all -e write=all -o foo.trace. ./foo
 - strace -i -k
 - dstat, to look at IO usage
 - opensnoop (TODO look into this), github.com/iovisor/bcc
