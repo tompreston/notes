@@ -1,5 +1,9 @@
 # Perf Performance Monitoring
-- Using Perf on ARM Platforms, Linaro
+See also:
+* https://www.brendangregg.com/linuxperf.html
+* https://github.com/sysstat/sysstat
+* https://pcp.io/index.html
+* Using Perf on ARM Platforms, Linaro
   https://s3.amazonaws.com/connect.linaro.org/yvr18/presentations/yvr18-416.pdf
   https://s3.amazonaws.com/connect.linaro.org/yvr18/videos/yvr18-416.mp4
 
