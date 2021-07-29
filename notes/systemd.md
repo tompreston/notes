@@ -1,5 +1,6 @@
 # Systemd
 * https://docs.fedoraproject.org/en-US/quick-docs/understanding-and-administering-systemd/
+* https://opensource.com/article/20/5/systemd-units
 * https://www.freedesktop.org/wiki/Software/systemd/
 * https://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks/
 * https://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions/
