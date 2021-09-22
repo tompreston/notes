@@ -7,3 +7,6 @@ You can use qemu-user to test userspace binaries (give it a sysroot for dynamic
 libraries):
 
     qemu-aarch64 -L toolchain/linarogcc/aarch64-linux-gnu/libc ./hello
+
+## macOS
+https://wiki.qemu.org/Hosts/Mac
