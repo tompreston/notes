@@ -4,6 +4,7 @@
 - Always follow PEP-8, use a linter https://www.python.org/dev/peps/pep-0008/
 - pipenv is official package management, see below
 - Use a requirements.txt file to describe project dependencies
+- HTTPServerError is better than HttpServerError
 
 ## pipenv and Debian 9 Stretch stable
 - Use system pip3 to install ~/.local/bin/pip3, then make sure PATH contains
