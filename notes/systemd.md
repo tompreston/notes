@@ -37,3 +37,11 @@ You may either use ps for that:
 
 Or you can even check /proc/$PID/cgroup directly. Also see this blog story.
 http://0pointer.de/blog/projects/systemd-for-admins-2.html
+
+## Viewing active units
+
+    systemctl
+
+Shows user scopes like firefox, gnome-software:
+
+    systemctl --user
