@@ -8,7 +8,8 @@
 * https://www.freedesktop.org/wiki/Software/DbusProjects/
 * https://pythonhosted.org/txdbus/dbus_overview.html
 * https://www.freedesktop.org/wiki/Software/systemd/dbus/
-- https://static.sched.com/hosted_files/ossna19/ee/systemd-SLIDES.pdf
+* https://static.sched.com/hosted_files/ossna19/ee/systemd-SLIDES.pdf
+* http://0pointer.net/blog/casync-a-tool-for-distributing-file-system-images.html
 
 ## Coredump
 https://jlk.fjfi.cvut.cz/arch/manpages/man/coredumpctl.1
