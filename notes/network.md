@@ -24,13 +24,13 @@ Set default route:
     ip route add default via 192.168.90.111 dev eth0
 
 
-# ifup/ifdown
+## ifup/ifdown
 If just using /etc/networking/interface*, use ifup/ifdown commands.
 
 More info https://wiki.debian.org/NetworkConfiguration#Setting_up_an_Ethernet_Interface
 
 
-# NetworkManager
+## NetworkManager
 You can access NetworkManager from the cli:
 
     nmcli
@@ -38,7 +38,7 @@ You can access NetworkManager from the cli:
     nmcli device show
 
 
-# DNS, DHCP
+## DNS, DHCP
 dhclient usually broadcasts IP and hostname to DNS
 
 Use `host` to search DNS for hostname:
@@ -48,13 +48,13 @@ Use `host` to search DNS for hostname:
 ifup/ifdown will reassociate using dhclient
 
 
-# Traceroute
+## Traceroute
 We can use traceroute follow hops to a given IP.
 
     traceroute 10.35.7.2
 
 
-# Forward IP traffic through device (eg. network - raspberry pi - devkit)
+## Forward IP traffic through device (eg. network - raspberry pi - devkit)
 Just looked this up [0], you need to setup the pi as a router:
 
     root@ts-rig1:~# echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -84,13 +84,13 @@ Then add a default route on the device:
 
 [0] https://www.tecmint.com/setup-linux-as-router/
 
-# tcpdump
+## tcpdump
 You can use tcpdump to record network traffic. Here is a useful guide:
 - https://danielmiessler.com/study/tcpdump/
 
     tcpdump -i eth0 -w capture.pcap
 
-# Captive Portal
+## Captive Portal
 For whatever reason, captive portals don't always work on Linux (eg. it breaks
 in Fedora 33, probably because of some domain name resolver change).  To
 debug/fix, use route, curl, nmap to find out the gateway IP, then manually add
@@ -109,3 +109,10 @@ remove the broken one with an empty string (to fallback on the global defaults):
 
     resolvectl status
     resolvectl dns 4 ""
+
+## Programming with Berkley Socket API
+The protocol and transport-agnostic API used by Linux for all sockets, be they
+UDP, TCP, UDS, Econet, arcnet, CANbus, etc.  Ie the
+socket/listen/bind/accept/select system calls.
+
+Some examples here: https://en.wikipedia.org/wiki/Berkeley_sockets
