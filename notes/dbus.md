@@ -1,5 +1,18 @@
 # dbus
-Some useful commands:
+List of properties from `man org.freedesktop.systemd1`
+* https://www.freedesktop.org/software/systemd/man/org.freedesktop.systemd1.html
+
+Print startup times:
+
+    busctl get-property --json=short --no-pager \
+        org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager \
+        FirmwareTimestampMonotonic \
+        LoaderTimestampMonotonic \
+        InitRDTimestampMonotonic \
+        UserspaceTimestampMonotonic \
+        FinishTimestampMonotonic
+
+Some gdbus stuff:
 
     gdbus introspect --system -d com.service.Bluetooth -o / -r
 
