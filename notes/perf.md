@@ -1,14 +1,20 @@
 # Perf Performance Monitoring
 See also:
 * https://www.brendangregg.com/linuxperf.html
+* http://www.brendangregg.com/perf.html
 * https://github.com/sysstat/sysstat
 * https://pcp.io/index.html
+* https://jvns.ca/perf-zine.pdf
+* Kernel Recipes 2017 - Perf in Netflix - Brendan Gregg https://youtu.be/UVM3WX8Lq2k
 * Using Perf on ARM Platforms, Linaro
   https://s3.amazonaws.com/connect.linaro.org/yvr18/presentations/yvr18-416.pdf
   https://s3.amazonaws.com/connect.linaro.org/yvr18/videos/yvr18-416.mp4
 
-# Basic usage
-See available counters:
+Terms:
+* CPU Performance Monitoring Counters (PMCs)
+
+# Basic workflow
+See available counters (as root):
 
     perf list
 
