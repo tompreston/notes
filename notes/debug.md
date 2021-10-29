@@ -42,7 +42,9 @@ This note is for debugging inspiration.
 - Are we seeing lots of interrupts in `vmstat 1` or /proc/{interrupts,softirqs}
 - dstat
 - `netstat -ap`
-- `netstat -tunapl`
+- `netstat -tunapl` (although `ss` is more modern)
+- `sudo lsof -i -n -P` show PID and ports
+  - https://twitter.com/b0rk/status/1022699735482810368?lang=en
 - ngrep -d any metafilter, http://metafilter.com
 - tcpdump port 8997 -w service.pcap
 - wireshark
