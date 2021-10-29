@@ -25,7 +25,7 @@ Set default route:
 
 
 ## ifup/ifdown
-If just using /etc/networking/interface*, use ifup/ifdown commands.
+If just using `/etc/networking/interface*`, use ifup/ifdown commands.
 
 More info https://wiki.debian.org/NetworkConfiguration#Setting_up_an_Ethernet_Interface
 
