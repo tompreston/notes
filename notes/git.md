@@ -44,3 +44,11 @@ What branch contains "string" in git log:
 
     $ git branch -a --contains 561a28d
         remotes/origin/the_magic_branch
+
+Number of times an author has commited to a file:
+
+    git blame --porcelain protoc-gen-typhon/generator.go | grep "author " | sort | uniq -ic | sort -n | head
+
+List files in a commit:
+
+    git diff-tree --no-commit-id --name-only -r HEAD
