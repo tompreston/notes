@@ -12,6 +12,35 @@ go.mod
 * dep requirements, other modules needed (transitive deps for downstreams)
 * semver
 
+## dep
+dep is a deprecated way of managing the vendor dir with Gopkg.lock and
+Gopkg.toml manifest. I've included this because it's useful to know my way.
+around it for migrating from dep to Go modules.
+
+There are some daily commands here
+
+	https://golang.github.io/dep/docs/daily-dep.html
+
+There's a diagram here:
+
+	https://golang.github.io/dep/docs/ensure-mechanics.html
+
+It's possible to force transitive deps:
+
+	https://golang.github.io/dep/docs/Gopkg.toml.html
+
+	[[override]]
+	name = "rsc.io/sampler"
+	version = "=1.3.1"
+
+	[[constraint]]
+	name = "rsc.io/quote"
+	version = "3.1.0"
+
+	[prune]
+	go-tests = true
+	unused-packages = true
+
 ## GOPATH changes it's behaviour depending on context
 Help text explains more:
 
