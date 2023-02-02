@@ -1,4 +1,5 @@
 # Testing
+- https://nedbatchelder.com/blog/201206/tldw_stop_mocking_start_testing.html
 - https://martinfowler.com/articles/practical-test-pyramid.html
 - https://docs.gitlab.com/ee/development/testing_guide/
 - https://madeintandem.com/blog/five-factor-testing/
