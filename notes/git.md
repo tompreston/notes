@@ -52,3 +52,7 @@ Number of times an author has commited to a file:
 List files in a commit:
 
     git diff-tree --no-commit-id --name-only -r HEAD
+
+Shortest possible output with date (https://stackoverflow.com/a/1441062/2203114):
+
+    git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
